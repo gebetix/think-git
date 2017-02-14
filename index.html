@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 
     <head>
         <meta charset="utf-8">
@@ -10,7 +10,7 @@
         <script src='http://d3js.org/d3.v3.min.js'></script>
         <!-- gitgraph.js -->
         <script src="js/gitgraph.js"></script>
-        <title>Think Git</title>
+        <title>Git</title>
     </head>
 
     <body>
@@ -20,39 +20,36 @@
             <div class="slides">
 
                 <section data-state="title-event"  data-transition="slide">
-                  <h1 class="title">think git</h1>
-                    <div id="divchart">
-                        <svg id="title-chart"></svg>
-                    </div>
+                  <h1 class="title">git</h1>
                     <aside class="notes">
-                        This talk is about the software git
+                        Лекция про git
                     </aside>
                 </section>
 
                 <section data-transition="slide">
-                    <section id="what-is-git" class="titleslide slide level1" data-transition="slide"><h1>What is git?</h1>
+                    <section id="what-is-git" class="titleslide slide level1" data-transition="slide"><div style="font-size: 60px;">Что такое git?</div>
                     <aside class="notes">
-                        Most you have have probably heard of git, but if you haven't -
-                        git is a version control tool. 
-                        It's just a fancy way of saying you track what changes you are making to a file. 
-                        You've probably used a version control tool, or maybe even invented one that works for you.
+Большинство из вас, наверное, слышали о Git, но если нет -
+                         Git является инструментом управления версиями.
+                         Это просто красивая обертка - в сущности Git позволяет отслеживать, какие изменения вы делаете в файл.
+                         Вы, вероятно, использовали инструмент контроля версий, или, может быть, даже изобрел тот, который работает для вас.
                     </aside>
                     </section>
                     <section id="section" class="slide level2">
                         <p class="center">
                             <br>
-                            <img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" style="max-height: 15em">
+                            <img src="https://pbs.twimg.com/media/C3maMplVYAAv-mf.jpg" style="max-height: 15em">
                             <br>
-                            <a href="http://www.phdcomics.com/comics/archive/phd101212s.gif" data-preview-link>Link</a>
+                            <a href="https://pbs.twimg.com/media/C3maMplVYAAv-mf.jpg" data-preview-link>Link</a>
                         </p>
                     <aside class="notes">
-                        If you've ever worked on a paper using Word, you've probably created a verison control system that works for you by saving a file with different "version" tags.
-                        The reason someone might do this is because they like having a backup of all their past changes. If someone wants to delete a paragraph, you keep a copy of the old version just in case
-                        And when you are collaborating with someone, this becomes more challenging. Tracking changes and merging content added by different people is time consuming.
-                        As you can imagine, this presents a problem in software development.
-                        It is likely that multiple people will work on the same file sometimes even at the same time.
-                        Even small software projects can have tens of files in multiple folders. 
-                        Additionally, developers frequently experiment with features and this should never affect the "master" copy of the project
+Если вы когда-либо работали на бумаге с помощью Word, вы, вероятно, была создана система управления verison, которая работает для вас, сохранив файл с различными тегами "Версия".
+                        Причина кто-то может сделать это, потому что они, как имеющие резервную копию всех своих прошлых изменений. Если кто-то хочет удалить абзац, вы сохраните копию старой версии на всякий случай
+                        И когда вы сотрудничать с кем-то, это становится все более сложной задачей. Отслеживание изменений и слияние содержимое, добавленное разными людьми отнимает много времени.
+                        Как вы можете себе представить, это представляет проблему в разработке программного обеспечения.
+                        Вполне вероятно, что несколько человек будут работать на том же самом файле иногда даже одновременно.
+                        Даже небольшие программные проекты могут иметь десятки файлов в нескольких папках.
+                        Кроме того, разработчики часто экспериментировать с функциями, и это никогда не должно влиять на "мастер" копию проекта
                     </aside>
                     </section>
                     <section id="section" class="slide level2">
@@ -63,23 +60,23 @@
                             <a href="http://imgs.xkcd.com/comics/git.png" data-preview-link>Link</a>
                         </p>
                     <aside class="notes">
-                        git to the rescue! Essentially what git can be is this, it can be a history of all changes you have made to every file in the project. 
-                        But, unfortunately you have to understand how it works to use it effectively.
-                        Most people when introduced to git, are thrown into using it, and usually don't understand how it works. When something you have never encountered before occurs, you might not know what to do. 
-                        I know I've deleted projects and downloaded a fresh copy of a repo because I accidentally created a conflict of some sort. 
-                        With this talk, I'd like to introduce what I'm calling the big ideas of git that will help you understand how git works.
+Git на помощь! По сути, Git может быть это, это может быть история всех изменений, внесенных в каждый файл в проекте.
+                         Но, к сожалению, вы должны понять, как она работает, чтобы эффективно его использовать.
+                         Большинство людей при введении мерзавцу, выбрасываются в использовании, и, как правило, не понимают, как это работает. Когда что-то вы никогда не сталкивались прежде, чем произойдет, вы можете не знать, что делать.
+                         Я знаю, что удаленные проекты и загрузить новую копию репо, потому что я случайно создал конфликт какой-то.
+                         С помощью этого разговора, я хотел бы представить, что я называю большие идеи Git, которые помогут вам понять, как работает Git.
                     </aside>
                     </section>
                     <section>
-                        <h3>git is a supplement to your workflow</h3>
-                        <aside class="notes">The first thing to understand is that git is a supplement to your current workflow. You can work the way you usually work, and all you have to do is use git every time you want to save your progress</aside>
+                        <div style="font-size: 60px;">git - это расширение для вашего workflow</div>
+                        <aside class="notes">Первое, что нужно понимать, что Git является дополнением к вашему текущему рабочий процесс. Вы можете работать так, как вы обычно работаете, и все, что вам нужно сделать, это использовать Git каждый раз, когда вы хотите сохранить ваш прогресс</aside>
                     </section>
                     <section>
                         <h3>Workflow</h3>
                         <div style="text-align: center; width: 100%; display: inline-block"><code></code></div>
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: center; width: 100%; display: inline-block"><code></code></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Edit files</div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Редактирование файлов</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="2"><code style="background-color: red; color: white; padding: .25em">$EDITOR</code></div>
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: left; width: 45%; display: inline-block" ></div>
@@ -89,17 +86,17 @@
                         <div style="text-align: center; width: 45%; display: inline-block">
                         </div>
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Сохранение изменений</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
                         <aside class="notes">
-                            Before we talk about git, let's talk about workflow.
-                            
-                            This is a simple example of a workflow. You edit a file and you save the file. SPC. 
-                            Once you reach what you consider a stable state, you can save the file as a different name as backup, or save it on dropbox or however you usually implement a version control system
-                            When you use git however, you don't have to save a different version of the file.
-                            When you are ready to save the current version of the file as a backup, you do that in git by taking a snapshot of the current state. 
-                            You can take a "snapshot" of the current state of a file by using a command called git commit.
-                            What really happens is that when you can create a "snapshot", it records the current state of all the files in the directory being tracked.
+Прежде чем говорить о Git, давайте поговорим о рабочем процессе.
+                            
+                             Это простой пример рабочего процесса. Вы редактировать файл и сохранить файл. SPC.
+                             После того, как вы достигнете того, что вы считаете, стабильное состояние, вы можете сохранить файл под другим именем, как резервное копирование, или сохранить его на Dropbox или же вы, как правило, внедрить систему контроля версий
+                             При использовании Git однако, вы не должны сохранить другую версию файла.
+                             Когда вы будете готовы, чтобы сохранить текущую версию файла в качестве резервной копии, вы делаете это в Git, принимая снимок текущего состояния.
+                             Вы можете взять "снимок" текущего состояния файла с помощью команды под названием Git фиксации.
+                             Что на самом деле происходит, что, когда вы можете создать "снимок", он записывает текущее состояние всех файлов в каталоге отслеживаются.
                     </section>
                     <section data-state="demo1-event" data-transition="none">
                         <h3><code>git commit</code></h3>
@@ -113,26 +110,26 @@
                                 <svg id="demo1-chart"></svg>
                             </div>
                         <aside class="notes">
-                            So what does a snapshot look like?
-                            Let's assume that a snapshot looks like this circle over here.
-                        As I mentioned earlier, a snapshot contains the current state of the file or directory. 
-                        When git creates a snapshot, it also creates a number and attaches that number to it. 
-                        git uses an algorithm to calculate this number and
-                        this number is unique, it is very unlikely that two such numbers will be the same
-                        Every snapshot / commit you create will have its own number attached to it. And this number is called a HASH. You can typically you can use the first 6 or 7 characters to uniquely identify a snapshot in your project. 
-                        Let's say you have created this first commit, and now you make more changes to the file. and want to save them.
-                        When you make changes to your files, and save them using git commit, git creates a new snapshot with a new HASH. 
-                        git also does a few other things. 
-                        1) It allows you to create a message that goes along with that commit. A commit has to have a message!
-                        2) When a new commit is created, it saves a reference to the parent commit. A snapshot can have multiple parents - i.e. you can take changes from two commits and merge them into one. The current commit HASH number depends on the path, i.e. it depends on what the parent is. If you change the parent hash i.e. change the content in the parent, every commit hash after that will be different.
-                        3) Whatever commit represents the current project state, git stores a reference to that current commit in the label HEAD 
-                        In the word document VCS, we created multiple versions but we did not track how we got to each state. git allows us to do that by storing all this information
-                        You may be wondering, where does git store all this - we will get to that.
-                        This, as you can imagine, forms a graph.
+Итак, что же снимок выглядит?
+                            Давайте предположим, что снимок выглядит как этот круг здесь.
+                        Как я упоминал ранее, снимок содержит текущее состояние файла или каталога.
+                        Когда мерзавец создает снимок, он также создает ряд и придает тот номер к нему.
+                        Git использует алгоритм для вычисления этого числа и
+                        Этот номер является уникальным, весьма маловероятно, что два таких номера будут такими же,
+                        Каждый снимок / фиксации вы создаете, будет иметь свой собственный номер, прикрепленный к нему. И это число называется HASH. Вы можете, как правило, вы можете использовать первые 6 или 7 символов, чтобы однозначно идентифицировать снимок в вашем проекте.
+                        Допустим, вы создали это первый коммит, и теперь вы сделаете больше изменений в файл. и хотите сохранить их.
+                        При внесении изменений в файлы и сохранить их с помощью Git фиксации, Git создает новый снимок с новым HASH.
+                        Git также делает несколько других вещей.
+                        1) Это позволяет создать сообщение, которое идет вместе с этой фиксации. Коммит должен иметь сообщение!
+                        2) При создании новой фиксации создан, он сохраняет ссылку на родительский фиксации. Снимок может иметь несколько родителей - то есть вы можете взять изменения из двух фиксаций и объединить их в одно целое. 
+                        3) Независимо от фиксации представляет текущее состояние проекта, Git хранит ссылку, что ток фиксации в головке этикетки
+                        В VCS документе слово, мы создали несколько версий, но мы не отслеживать, как мы получили к каждому государству. Git позволяет сделать это за счет хранения всей этой информации
+                        Вам может быть интересно, где же мерзавец магазин все это - мы вернемся к этому.
+                        Это, как вы можете себе представить, формирует график.
                         </aside>
                     </section>
                     <section data-state="network" class="slide level2">
-                        <h3>What's your story</h3>
+                        <div style="font-size: 60px;">А зачем мне все это?</div>
                             <div class="fragment demo0-start" style="margin: 50px 0px;">
                             </div>
                             <div class="fragment demo0-git-story-1" style="margin: 50px 0px;">
@@ -147,30 +144,30 @@
                                 <svg id="demo0-chart"></svg>
                             </div>
                     <aside class="notes">
-                        and like with any graph, you can choose to tell a story. 
-                        In this case, we want to work on a feature of a software, and while working on it we get a new idea. 
-                        You can go back to a previous state of the project, and branch off to work on a new idea - not affecting your current work.
-                        And, when you are ready, you can pull these changes back to your master branch
-                        You can go back and review individual changes made in any commit. 
-                        You can even undo changes, apply these changes to different state of your project. 
-                        You could also discard a branch entirely, or switch between branches. 
-                        Branches are awesome, and we'll talk more able branches a little later.
-                        The point here is that this graph exists.
-                        This graph is the documentation of how your project came to be, i.e. the history of your project is a graph that you can traverse at will.
+и как с любым графиком, вы можете выбрать, чтобы рассказать историю.
+                        В этом случае, мы хотим работать на особенности программного обеспечения, и во время работы над ней мы получаем новую идею.
+                        Вы можете вернуться к предыдущему состоянию проекта, и ответвление к работе над новой идеей - не влияет на вашу текущую работу.
+                        И, когда вы будете готовы, вы можете вытащить эти изменения обратно в основной отрасли
+                        Вы можете вернуться назад и пересмотреть отдельные изменения, сделанные в какой-либо фиксации.
+                        Вы даже можете отменить изменения, применить эти изменения в другое состояние вашего проекта.
+                        Кроме того, можно отказаться от ветку целиком, или переключаться между ветвями.
+                        Отрасли являются удивительными, и мы будем говорить более способными ветви чуть позже.
+                        Дело в том, что этот граф существует.
+                        Этот график является документация, как ваш проект пришел, чтобы быть, то есть история вашего проекта график, который вы можете пройти по собственному желанию.
                     </aside>
                     </section>
                     <section>
-                        <h1>Big idea #1</h1>
-                        git history is a graph
+                        <div style="font-size: 60px;">Идея #1</div>
+                        git история это граф
                         <aside class="notes">
-                            So that's big idea number 1, git history is a graph that you can traverse, allowing you to move to any "saved" state in a project
+Так что это большая идея номер 1, история Git представляет собой график, который вы можете пройти, что позволяет перейти к любому "спасенных" состоянии в проекте
                         </aside>
                     </section>
                 </section>
 
                 <section data-transition="slide">
                     <section id="so-really-what-is-git" class="titleslide slide level1" data-transition="slide">
-                        <h1>git functions</h1>
+                        <div style="font-size: 60px;">Функции git</div>
                     </section>
                     <section>
 <code>
@@ -280,7 +277,7 @@ to read about a specific subcommand or concept.
 </code>
                     <aside class="notes">
                         But you don't have to use every one of the functions available. I've only every had to use a handful.
- because Git was initially a toolkit for a VCS rather than a full user-friendly VCS, it has a bunch of verbs that do low-level work and were designed to be chained together UNIX style or called from scripts. These commands are generally referred to as “plumbing” commands, and the more user-friendly commands are called “porcelain” commands.
+Но так как сначала Git был скорее инструментарием для создания СКВ, чем СКВ, удобной для пользователей, в нём полно команд, выполняющих низкоуровневые операции, которые спроектированы так, чтобы их можно было использовать в цепочку в стиле UNIX, а также использовать в сценариях. Эти команды, как правило, называют служебными ("plumbing" — трубопровод), а ориентированные на пользователя называют пользовательскими ("porcelain" — фарфор).
  https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain
                     </aside>
 </section>
@@ -289,18 +286,18 @@ to read about a specific subcommand or concept.
                         <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="1"><code></code></div>
                         <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="1"><code style="background-color: rgba(0, 0, 0, .25); color: white; border-radius: 5em; padding: .25em" >git init</code></div>
                         <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="1"><code></code></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Edit files</div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Редактирование файлов</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="2"><code style="background-color: red; color: white; padding: .25em">$EDITOR</code></div>
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
-                        <div style="text-align: left; width: 45%; display: inline-block" class="fragment" data-fragment-index="0">Group changes</div>
+                        <div style="text-align: left; width: 45%; display: inline-block" class="fragment" data-fragment-index="0">Групповые изменения</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="3"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git add</code></div>
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
-                        <div style="text-align: left; width: 45%; display: inline-block" class="fragment" data-fragment-index="0">Review changes</div>
+                        <div style="text-align: left; width: 45%; display: inline-block" class="fragment" data-fragment-index="0">Просмотр изменений</div>
                         <div style="text-align: center; width: 45%; display: inline-block">
                             <code class="fragment" data-fragment-index="4" style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git status</code>
                         </div>
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Сохранение изменений</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
                         <aside class="notes">Let's talk about our workflow again. To  actually use git we need to add a couple of steps to the workflow we talked about earlier. We group changes before committing them.
                             And we do this using the git add command.
@@ -333,23 +330,6 @@ to read about a specific subcommand or concept.
                                 git commit updates the .git folder and thereby updating the graph
                             </aside>
                     </section>
-
-                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
-                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
-                            <h3 style="color: white;">demo</h3>
-                        </div>
-                    <aside class="notes">
-                        .git folder is the database of key value pairs that track your project history. You can start a git repository by typing `git init`. When you add a file, git runs a SHA1 hash on the file which returns a hash. This hash is stored in a tree object and a commit object. If you create a file on your machine called `readme` and write `# farm` in it, and `git add` it to an empty repo, you should get the following folder in your .git repo
-├── b8
-│   └── fa28116ec360ae79b59da237ca991ab31a696e
-Computes the hash of the file.
-Stores the contents of the README file using the hash of the file to name the file.
-Adds a reference to the README file to the git index
-                    because git only cares about content. git uses content as a heuristic to find if a file has been renamed. if too much of the content has been changed between two commits when a rename occured, git will think it is a different file. and you can manually set this heuristic, I believe the default is  50%. 
-                    When you git commit the staged file, git creates a blob and a tree. 
-                    git does calculate a diff though, only when it needs to push. Again, this can be set manually. You can say - take longer than you usually do, but make me the smallest patch you can. 
-                    </aside>
-                    </section>
                     <section class="slide level2">
                         <p class="center">
                         <img src="img/commit-1.svg"  style="max-height: 15em;"  alt="commit structure">
@@ -361,31 +341,15 @@ Adds a reference to the README file to the git index
                         Tree is like a directory and can link to other trees or blobs. blobs are like files.
                     </aside>
                     </section>
-                    <section class="slide level2">
-                        <p class="center">
-                        <img src="img/commit-2.svg"  style="max-height: 15em;"  alt="commit structure">
-                            <br>
-                        <a href="https://git-scm.com/blog/2011/07/11/reset.html" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        If the bottom file was modified, and committed to the repository in a new snapshot, git will still use the same blobs for unmodified files
-                        There are other things going on here, like the tag which is just a label. Every branch name is just a label too and we'll touch on that later. Now for a quick demo
-                    </aside>
-                    </section>
-                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-demo.mov?raw=true" data-background-color="#000000">
-                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
-                            <h3 style="color: white;">demo</h3>
-                        </div>
-                    </section>
                     <section>
-                        <h1>Big idea #2</h1>
-                        Difference between Head, Index and Working directory
+                        <div style="font-size: 60px;">Идея #2</div>
+                        Помните разницу между HEAD, stage and рабочей директорией
                         <br>
                         <a href="https://git-scm.com/blog/2011/07/11/reset.html" data-preview-link>Link</a>
                     </section>
                 </section>
                 <section data-transition="slide">
-                    <section><h1>Branches</h1></section>
+                    <section><div style="font-size: 60px;">Ветки</div></section>
                     <section data-state="demo2-event" data-transition="none">
                         <h3><code>git branch master</code></h3>
                                 <div class="fragment demo2-start" style="margin: 50px 0px;">
@@ -440,14 +404,14 @@ Adds a reference to the README file to the git index
                             </div>
                     </section>
                     <section>
-                        <h1>Big idea #3</h1>
-                        branches are just labels
+                        <div style="font-size: 60px;">Идея #3</div>
+                        Ветки это всего лишь лэйблы
                     </section>
                 </section>
 
-                <section data-transition="slide">
+<!--                 <section data-transition="slide">
                     <section data-transition="slide">
-                    <h1>Merge Conflict</h1>
+                    <div style="font-size: 60px;">Разрешение конфликтов</div
                     </section>
 
                     <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-mergetool.mov?raw=true" data-background-color="#000000">
@@ -466,13 +430,13 @@ Adds a reference to the README file to the git index
                     <aside class="notes">
                         There are mergetools out there other than vim, kdiff3 is open source and free on all platforms. p4merge is great.
                     </aside>
-                    </section>
+                    </section> 
 
-                </section>
+                </section> -->
 
                 <section data-transition="slide">
                     <section data-transition="slide">
-                    <h1>Changing history</h1>
+                    <div style="font-size: 60px;">Изменение истории</div>
                     </section>
                     <section data-state="demo5-event" data-transition="none">
                         <h3><code>git rebase master</code></h3>
@@ -488,7 +452,7 @@ Adds a reference to the README file to the git index
                                 <svg id="demo5-chart"></svg>
                             </div>
                     </section>
-                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-rebase.mov?raw=true" data-background-color="#000000">
+<!--                     <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-rebase.mov?raw=true" data-background-color="#000000">
                         <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
                             <h3 style="color: white;">demo</h3>
                         </div>
@@ -503,15 +467,15 @@ Adds a reference to the README file to the git index
                     <aside class="notes">
                         demo showing git rebase interactive
                     </aside>
-                    </section>
+                    </section> -->
                     <section>
-                        <h1>Big idea #4</h1>
-                        Local commits are yours to do with what you like
+                        <div style="font-size: 60px;">Идея #4</div>
+                        Локальная история - делай с ней, что угодно
                     </section>
                 </section>
 
                 <section data-transition="slide">
-                    <section><h1>Remote</h1></section>
+                    <section><div style="font-size: 60px;">Удаленный репозиторий</div></section>
                     <section>
                             <p class="center">
                             <img src="img/local-remote.svg"  style="max-height: 15em;"  alt="git operations">
@@ -523,17 +487,17 @@ Adds a reference to the README file to the git index
                     <section data-state="demo5-event" data-transition="none">
                         <h3><code>git pull = git fetch + git merge</code></h3>
                     </section>
-                    <section data-background-video="" data-background-color="#000000">
+<!--                     <section data-background-video="" data-background-color="#000000">
                         <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
                             <h3 style="color: white;">demo</h3>
                         </div>
                     <aside class="notes">
                         demo showing git fetch
                     </aside>
-                    </section>
+                    </section> -->
                     <section>
-                        <h1>Big idea #5</h1>
-                        Remote is special branch, but a branch nonetheless
+                        <div style="font-size: 60px;">Идея #5</div>
+                        Удаленная ветка это специальная ветка, но все-таки это ветка :)
                     </section>
 
                 </section>
@@ -541,22 +505,22 @@ Adds a reference to the README file to the git index
 
                 <section data-transition="slide">
                     <section data-transition="slide">
-                    <h1>Review of big ideas</h1>
+                    <div style="font-size: 60px;">Суммируем идеи</div>
                     </section>
                     <section id="commit-related-changes" class="slide level2">
-                        <h3>git history is a graph</h3>
+                        <div style="font-size: 60px;">История git это граф</div>
                     </section>
                     <section id="commit-often" class="slide level2">
-                        <h3>Difference between working directory, staging area and .git repository</h3>
+                        <div style="font-size: 60px;">Разница между working directory, staging area и .git repository</div>
                     </section>
                     <section id="branches-are-inexpensive" class="slide level2">
-                        <h3>Branches are just labels</h3>
+                        <div style="font-size: 60px;">Ветки это всего лишь лэйблы</div>
                     </section>
                     <section id="commit-only-if-tests-pass" class="slide level2">
-                        <h3>Remote is a branch too</h3>
+                        <div style="font-size: 60px;">Удаленная ветка это тоже ветка</div>
                     </section>
                     <section id="write-good-commit-messages" class="slide level2">
-                        <h3>Local history is whatever you make it</h3>
+                        <div style="font-size: 60px;">Локальная история - делай с ней, что угодно</div>
                     </section>
                 </section>
 
@@ -565,234 +529,28 @@ Adds a reference to the README file to the git index
                     <h1>Best practices</h1>
                     </section>
                     <section id="commit-related-changes" class="slide level2">
-                        <h3>Commit related changes</h3>
+                        <div style="font-size: 60px;">Связанные изменения в один коммит</div>
                     </section>
                     <section id="commit-often" class="slide level2">
-                        <h3>Commit often</h3>
+                        <div style="font-size: 60px;">Коммить чаще!</div>
                     </section>
                     <section id="branches-are-inexpensive" class="slide level2">
-                        <h3>Branches are inexpensive</h3>
+                        <div style="font-size: 60px;">Ветки - это дешево</div>
                     </section>
                     <section id="commit-only-if-tests-pass" class="slide level2">
-                        <h3>Push to master only if tests pass</h3>
+                        <div style="font-size: 60px;">Push в мастер, только если прошел тесты</div>
                     </section>
                     <section id="write-good-commit-messages" class="slide level2">
-                        <h3>Write good commit messages!</h3>
+                        <div style="font-size: 60px;">Пиши хорошие сообщения для коммитов!</div>
                     </section>
                     <section id="discuss-workflow-with-team" class="slide level2">
-                        <h3>Discuss workflow with team</h3>
+                        <div style="font-size: 60px;">Обсуждай рабочий процесс с командой!!!</div>
                     </section>
                     <section>
-                        <h3>Less of this and more of this</h3>
+                        <div style="font-size: 60px;">Поменьше этого и побольше этого</div>
                         <p class="center" style="position: absolute">
                             <img src="img/git-history.png" alt="git-history">
                         </p>
-                    </section>
-                </section>
-                <section>
-                    <h3>Source code for this presentation</h3>
-                    <p class="center">
-                    <a href="https://github.com/kdheepak89/think-git"><img class="no-shadow" style="border-radius: 50px; max-height: 2em; margin-top: 5em;" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="git-repo"></a>
-                    </p>
-                </section>
-                <section>
-                    <h3>Additional slides</h3>
-                </section>
-                <section>
-                    <section class="titleslide slide level1" data-transition="slide"><h1>Advantages of git</h1></section>
-                    <section id="section" class="slide level2">
-                        <h1></h1>
-                        <ul>
-                            <li>Free </li>
-                            <li>Fast </li>
-                            <li>Secure </li>
-                            <li>Supports multiple non linear workflows</li>
-                            <li class="fragment current-visible"><b>Easy to learn</b></li>
-                        </ul>
-                    <aside class="notes">
-                        git is free, fast, secure and support different workflows.
-                        Hit SPC
-                        And most importantly it is easy to learn
-                    </aside>
-                    </section>
-                    <section class="slide level2" >
-                        <h3>Free as in [beer, speech]</h3>
-                        <p class="center">
-                            <br>
-                            <img src="img/git-scm.png" style="max-height: 10em;"  alt="git-scm">
-                            <br>
-                            <a href="https://git-scm.com/" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        Free to download for Windows, OSX, Linux. Free to modify under the GNU General Public License version 2.
-                    </aside>
-                    </section>
-                    <section>
-                    <h3>Small</h3>
-                    The Mozilla project's CVS repository is about 3 GB; it's about 12 GB in Subversion's fsfs format. In Git it's around 300 MB.
-                    <aside class="notes">
-                        git repositories are usually smaller than CVS repository for the same source code and history. git is efficient at storing content and changes in content.
-                    </aside>
-                    </section>
-                    <section class="slide level2" >
-                        <h3>Fast</h3>
-                         <table width="100%">
-                              <tbody>
-                                <tr>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.649,2.6&amp;chds=0,2.6&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Commit A" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:1.53,24.7&amp;chds=0,24.7&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Commit B" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.257,1.09&amp;chds=0,1.09&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Diff Curr" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.248,3.99&amp;chds=0,3.99&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Diff Rec" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:1.17,83.57&amp;chds=0,83.57&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Diff Tags" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git*|git|svn&amp;chd=t:21.0,107.5,14.0&amp;chds=0,107.5&amp;chs=100x125&amp;chco=E09FA0|E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Clone" alt="init benchmarks">
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.012,0.381&amp;chds=0,0.381&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Log (50)" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.519,169.197&amp;chds=0,169.197&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Log (All)" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.601,82.843&amp;chds=0,82.843&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Log (File)" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.896,2.816&amp;chds=0,2.816&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Update" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:1.91,3.04&amp;chds=0,3.04&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Blame" alt="init benchmarks">
-                                  </td>
-                                  <td>
-                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:181,132&amp;chds=0,181&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Size" alt="init benchmarks">
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                            <br>
-                            <a href="https://git-scm.com/about/small-and-fast" data-preview-link>Link</a>
-                    <aside class="notes">
-                        git repositories are fast. Table above shows some comparisons of svn vs git. svn requires a central repository to operate, whereas git is entirely local. This means no network latencies. This also means a few other things, the entire project is on your local machine i.e. EVERYONE that has cloned the repository has the entire history of the project on their machine as well. Distributed backup. 
-                    </aside>
-                    </section>
-                    <section data-transition="none">
-                        <h3>Distributed non linear workflows</h3>
-                        <p class="center" style="position: absolute">
-                            Subversion-Style Workflow
-                            <img src="https://git-scm.com/images/about/workflow-a@2x.png"  style="max-height: 10em;"  alt="Workflow A">
-                            <br>
-                            <a href="https://git-scm.com/about/distributed" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        git allows you to use it the way you want. You can use it exactly like how you would svn.
-                    </aside>
-                    </section>
-                    <section data-transition="none">
-                        <h3>Distributed non linear workflows</h3>
-                        <p class="center" style="position: absolute">
-                            Integration Manager Workflow
-                            <img src="https://git-scm.com/images/about/workflow-b@2x.png"  style="max-height: 10em;"  alt="Workflow B">
-                            <br>
-                            <a href="https://git-scm.com/about/distributed" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        git also allows you to pick and compile specific changes from anyone else that has made their repository public 
-                    </aside>
-                    </section>
-                    <section data-transition="none">
-                        <h3>Distributed non linear workflows</h3>
-                        <p class="center" style="position: absolute">
-                            Dictator and Lieutenants Workflow
-                            <img src="https://git-scm.com/images/about/workflow-c@2x.png"  style="max-height: 10em;"  alt="Workflow C">
-                            <br>
-                            <a href="https://git-scm.com/about/distributed" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        Workflow followed by Linux devs, where Linus has a repository on his local machine that no one else has access to.
-                    </aside>
-                    </section>
-                    <section id="section-2" class="slide level2">
-                    <h1></h1>
-                    <ul>
-                    <li>git is not GitHub</li>
-                    <li>git is not Dropbox</li>
-                    <li>git is not svn</li>
-                    </ul>
-                    <aside class="notes">
-                        git is different from GitHub. GitHub a web service that host a public free remote copy of your repository. git is the toolkit that builds the repository. They are not the same, and there are loads of other places you can store your code remotely - gitlab, bitbucket etc. Why, you can even set up a computer in your home to act as a remote git server. 
-                        git is not Dropbox, and although it can be used for sharing word documents and pdfs, this may not be such a good idea - this will not scale well. git works best for text files. 
-                    </aside>
-                    </section>
-                    <section id="cvs" class="slide level2">
-                    <h3>CVS</h3>
-                    <figure>
-                    <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png"  style="max-height: 10em;"  alt="" />
-                    </figure>
-                    <aside class="notes">
-                        SVN stores differences in the form of deltas. 
-                    </aside>
-                    </section>
-                    <section id="git" class="slide level2">
-                    <h3>Git</h3>
-                    <figure>
-                    <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png"  style="max-height: 10em;"  alt="" />
-                    </figure>
-                    <aside class="notes">
-                        git however, stores snapshots. People often assume that git stores the differences between files, but that is not true. git tracks content and not files. The way git wins, is by reusing the same "blob" in different snapshots if the file has not changed. 
-                    </aside>
-                    </section>
-                </section>
-
-                <section>
-                    <section id="a-brief-history-of-git" class="titleslide slide level1" data-transition="slide">
-                        <h1>A brief history of Git</h1>
-                    </section>
-                    <section id="section-1" class="slide level2">
-                        <ul>
-                            <li><code>git</code> is British English slang for &quot;unpleasant person&quot;.</li>
-                            <p style="text-indent: 2em;"> - Linus Torvalds likes to name projects after himself</p>
-                        </ul>
-                    </section>
-                    <section id="section" class="slide level2">
-                        <p class="center">
-                            The Parable by Tom Preston-Werner (Founder of GitHub)
-                            <br>
-                            <img src="img/git-parable.png" alt="The Git Parable">
-                            <br>
-                            <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        This article goes through the steps one may attempt to create a version control system. In this hypothetical scenario one may start off by creating multiple folders as a backup. The final VCS that is arrived at is very similar to git. The author is the founder of GitHub
-                    </aside>
-                    </section>
-                    <section class="slide level2">
-                        <p class="center">
-                            <code>git blame README</code>
-                            <img src="img/git-readme.png" style="max-height: 15em;" alt="git readme">
-                            <br>
-                            <a href="https://github.com/git/git/blame/master/README" data-preview-link>Link</a>
-                        </p>
-                    </section>
-                    <section class="slide level2">
-                        <p class="center">
-                            <img src="img/git-2005-article.png" style="max-height: 15em;" alt="Article on Git in 2005">
-                            <br>
-                            <a href="http://www.pcworld.idg.com.au/article/129776/after_controversy_torvalds_begins_work_git_/" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        Linus on why he created git
-                    </aside>
                     </section>
                 </section>
 
